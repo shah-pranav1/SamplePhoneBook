@@ -70,7 +70,7 @@ export class ContactComponent implements OnInit {
         };
         this.contactService.updateContact(updatedContact);
       } else {
-        const newId = this.contactService.contacts.length + 1;
+        const newId = this.contactService.contacts.sort((item1, item2) => item2.id - item1.id)[0].id + 1;
         const newContact: Contact = {
           id: newId,
           name: this.contactForm.value.nameControl,
