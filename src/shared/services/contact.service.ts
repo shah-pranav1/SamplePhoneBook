@@ -17,10 +17,6 @@ export class ContactService {
 
   contactsChanged = new BehaviorSubject<Contact[]>(this.contacts);
 
-  // getContacts() {
-  //   return this.contacts.slice();
-  // }
-
   addContact(newContact: Contact) {
     this.contacts.push(newContact);
     this.contactsChanged.next(this.contacts.slice());
